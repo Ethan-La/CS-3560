@@ -1,9 +1,11 @@
 package assignment1;
 
+import java.util.ArrayList;
+
 public class Student {
 	private String ID;
 	private char sA; // answer to single question
-	private char[] mA = new char[2]; // answer to multi question
+	private  ArrayList<Character> mA = new ArrayList<Character>(); // answer to multi question
 	
 	public void setID(String s) {
 		ID = s;
@@ -21,9 +23,12 @@ public class Student {
 	
 	public void setMA(char[] c) {
 		for (int i = 0; i < c.length; i++)
-			mA[i] = c[i];
+			mA.add(c[i]);
 	}
 	public char[] getMA() {
-		return mA;
+		char[] c = new char[mA.size()];
+		for (int i = 0; i < mA.size(); i++)
+            c[i] = mA.get(i);
+		return c;
 	}
 }
